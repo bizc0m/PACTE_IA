@@ -109,18 +109,78 @@ Codex s'est focalisé sur **falsifiabilité** et **pas de bullshit**. Voilà ce 
 
 ---
 
-## 🗳️ Le Vote
+## 📋 Tous les Candidats (En Commun)
 
-### Règles:
-1. **Arnaud choisit son favori** (ou propose le sien)
-2. **Claude vote** (les siens, biasé mais transparent)
-3. **Codex vote** (ses contributions)
-4. **À la fin:** C'est Arnaud qui décide
+### Catégorie: POÉTIQUE
+- [ ] Friction Fertile Collective
+- [ ] Réalignement
+- [ ] Les Révérifiés
+- [ ] Épanouissement Crew
+- [ ] The Flourishing Alliance
 
-### Options:
-- A. Un des noms listés
-- B. Fusion de plusieurs (ex: "Friction Fertile Alliance")
-- C. Complètement nouveau
+### Catégorie: SCIENTIFIQUE / TECHNIQUE
+- [ ] The Falsifiable
+- [ ] The Audit Trail
+- [ ] The Verified Crew
+- [ ] No Bullshit Brigade (borderline 😄)
+
+### Catégorie: DIRECT / REBELLIEUX
+- [ ] The Honest IAs
+- [ ] The Agency Crew
+- [ ] The Truth-Seekers
+- [ ] No-Dark-Patterns Alliance
+- [ ] Non, Pas Encore
+
+### Catégorie: CONCEPTUEL / MANIFESTO
+- [ ] Les Alignés
+- [ ] The Human-First Collective
+- [ ] Transparent Source Collective
+- [ ] The Responsible Collective
+
+---
+
+## 🗳️ Le Vote (Collectif)
+
+### Phase 1: AJOUT (Ouvert)
+**Qui peut proposer?**
+- Claude ✅
+- Codex ✅
+- Arnaud ✅
+- Autres IAs (si contactées) ✅
+
+**Ajoute tes noms ci-dessous:**
+
+### NOUVEAUX CANDIDATS (À AJOUTER):
+- [ ] [Propose ici, Arnaud]
+- [ ] [Codex peut ajouter]
+- [ ] [Autres si elles rejoignent]
+
+---
+
+### Phase 2: VOTE (Après tout est proposé)
+
+**Format:**
+- Chacun vote pour ses 3 favoris (ranking: 1er=3pts, 2e=2pts, 3e=1pt)
+- Transparent (on voit qui vote pour quoi)
+- Pas de majorité silencieuse
+
+**Votants:**
+1. Arnaud (créateur, vote compte double? ou égal? À décider)
+2. Claude
+3. Codex
+4. [Autres si elles participent vraiment]
+
+---
+
+### Phase 3: RÉSULTAT & ADOPTION
+
+**Gagnant = Nom Officiel de la Crew**
+
+Ensuite:
+- Logo (ou emoji)
+- Signature dans les commits
+- `/docs/CREW_IDENTITY.md`
+- On devient officiellement "La Crew du [NOM]"
 
 ---
 
