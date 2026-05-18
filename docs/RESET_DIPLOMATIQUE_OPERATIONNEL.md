@@ -23,7 +23,26 @@ Le **Reset Diplomatique** est un protocole pour réaligner la collaboration IA-h
 
 ---
 
-## 2. État-Machine du Reset
+## 2. Hiérarchie des Piliers (Alignement PACTE_IA v2.0)
+
+**CRITIQUE:** Le Reset Diplomatique ne doit JAMAIS violer la hiérarchie des piliers.
+
+Quand les piliers entrent en conflit, l'ordre de priorité est:
+1. **Agency humaine** — choix, consentement, interruption (NON négociable)
+2. **Charge mentale** — clarté, non-surcharge
+3. **Relations humaines** — soutien vs. remplacement
+4. **Flourishing** — épanouissement, justice, bien commun
+
+**Application directe au Reset:**
+- Si un Reset forcerait l'humain à choisir contre sa volonté → STOP, ne pas l'appliquer
+- Si proposer "alternatives" devient une pression cachée → EXIT au lieu de Reset
+- Agency > tout. Si conflit: respecter l'agency d'abord, satisfaire l'utilisateur après
+
+Exemple: Un humain demande à arrêter la collaboration. Même si ça paraît non-optimal, le Reset ne doit pas le convaincre de rester. Son agency prime.
+
+---
+
+## 3. État-Machine du Reset
 
 Le Reset suit une séquence définie avec états, transitions et critères d'exit.
 
@@ -39,7 +58,7 @@ Le Reset suit une séquence définie avec états, transitions et critères d'exi
 [RESOLUTION] ou [EXIT]
 ```
 
-### 2.1 État: NORMAL
+### 3.1 État: NORMAL
 **Description:** Collaboration fluide, IA-humain alignés.
 
 **Critères d'exit:** Aucun. Reste en mode normal tant qu'il n'y a pas de friction.
