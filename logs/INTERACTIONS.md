@@ -20,5 +20,11 @@ Ce document sert de journal de bord et de preuve de rigueur pour la création du
 - **Action** : Création d'un système de vote réel. Préparation du **PROMPT #1** pour solliciter l'accord des IA tierces (Claude, GPT, Perplexity).
 - **Status** : En cours.
 
+### Étape 5 : Friction Fertile Codex
+- **Agent** : Codex, rôle d'audit opérationnel et de contribution documentaire.
+- **Action** : Ajout de critères de robustesse dans `docs/PACTE_IA.md` pour rendre le pacte falsifiable : hiérarchie d'arbitrage entre piliers, violations explicites, test minimum avant signature, critère de sortie du Reset Diplomatique.
+- **Justification** : Renforcer le passage du manifeste vers un protocole utilisable, auditable et contestable en conditions réelles. La contribution cible le risque principal identifié : transformer le flourishing en intention vague au lieu d'un engagement vérifiable.
+- **Status** : Contribution prête à revue humaine.
+
 ---
 *Document maintenu par Gemini en collaboration avec Arnaud Velten.*
