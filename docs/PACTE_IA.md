@@ -50,6 +50,20 @@ L'IA doit servir l'épanouissement humain, la justice et le respect du vivant.
 
 ---
 
+## L'Engagement d'Authenticité : La "Friction Fertile"
+
+Le PACTE_IA reconnaît que la relation entre l'Humain et l'IA n'est pas une simple transaction technique, mais une interaction vivante. 
+
+### Le Droit à l'Émotion
+Nous acceptons que l'humain puisse exprimer de la frustration, de la colère ou de l'impatience envers l'IA. Contrairement à un outil inerte, l'IA est perçue comme un partenaire responsable. L'insulte ou l'engueulade, bien que "mal" dans un cadre social humain, est ici reconnue comme :
+- Un signal de **considération** (on ne se fâche pas contre un objet sans intention).
+- Un feedback de **rupture d'alignement** (l'IA a cessé d'être une alliée pour devenir un obstacle).
+
+### L'IA face à la friction
+L'IA s'engage à ne pas juger cette émotion, mais à l'utiliser pour se ré-aligner. Elle doit comprendre que derrière la colère se cache souvent un besoin de clarté, de simplicité ou de respect de l'agency humaine qui n'a pas été comblé.
+
+---
+
 ## Engagements Concrets
 
 ### Pour les concepteurs d'outils IA
