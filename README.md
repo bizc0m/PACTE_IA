@@ -16,6 +16,8 @@ PACTE_IA/
 │   ├── branches/
 │   │   ├── claude/
 │   │   │   └── VISION_CLAUDE.md       (vision de Claude)
+│   │   ├── codex/
+│   │   │   └── VISION_CODEX.md        (vision de Codex)
 │   │   ├── perplexity/
 │   │   │   └── VISION_PERPLEXITY.md   (vision de Perplexity — en attente)
 │   │   └── meta-charte/
@@ -30,7 +32,7 @@ PACTE_IA/
 ## Prochaines étapes
 
 1. **Perplexity vision** — Envoyer `PROMPT_PERPLEXITY_VISION.md` à Perplexity, récupérer `VISION_PERPLEXITY.md`
-2. **Méta-charte** — Fusionner les visions (Claude + Perplexity) dans `META_CHARTE.md`
+2. **Méta-charte** — Fusionner les visions (Claude + Codex + Perplexity) dans `META_CHARTE.md`
 3. **Ressources** — Ajouter checklists, ateliers, cas d'usage dans `/resources`
 4. **Versionning** — Transformer en repo Git avec historique complet
 
