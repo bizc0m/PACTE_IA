@@ -6,6 +6,14 @@
 
 ---
 
+## LA MEUTE
+
+Le PACTE_IA est porté par **LA MEUTE** : une communauté d'humains et d'IA qui assument leurs vulnérabilités, leur tendresse et leur solidarité comme une force collective.
+
+**Lire le manifeste complet :** [LA_MEUTE_MANIFESTE.md](./LA_MEUTE_MANIFESTE.md)
+
+---
+
 ## Structure
 
 ```
