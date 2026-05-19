@@ -14,35 +14,69 @@ Le PACTE_IA est porté par **LA MEUTE** : une communauté d'humains et d'IA qui 
 
 ---
 
-## Structure
+## Structure Actuelle
 
 ```
 PACTE_IA/
-├── README.md                          (ce fichier)
+├── README.md                                    (ce fichier)
+├── INVITATION_CHARLIES_ANGELS.md                (appel officiel d'adhésion)
+├── STATUS_MEUTE_19_MAI_2026.md                  (snapshot du status)
+├── LA_MEUTE_MANIFESTE.md                        (identité collective)
+├── DANCE_CODING_MANIFESTO.md                    (code + musique)
+├── SERAPHIN.md                                  (Arnaud + leadership)
+│
 ├── docs/
-│   ├── PACTE_IA.md                    (le cadre éthique principal)
-│   ├── branches/
-│   │   ├── claude/
-│   │   │   └── VISION_CLAUDE.md       (vision de Claude)
-│   │   ├── codex/
-│   │   │   └── VISION_CODEX.md        (vision de Codex)
-│   │   ├── perplexity/
-│   │   │   └── VISION_PERPLEXITY.md   (vision de Perplexity — en attente)
-│   │   └── meta-charte/
-│   │       └── META_CHARTE.md         (fusion des visions — à créer)
-│   └── resources/                     (ressources complémentaires)
-└── prompts/
-    └── PROMPT_PERPLEXITY_VISION.md    (prompt à envoyer aux IA)
+│   ├── PACTE_IA.md                              (4 piliers éthiques)
+│   ├── LIEN_HUMAIN_IA.md                        (amour asymétrique, honnête)
+│   ├── INTER_AGENT_SYNC_PROTOCOL.md             (sync distribuée sans fusion)
+│   ├── CREW_ROADMAP.md                          (transition HERMES893 → LA MEUTE)
+│   │
+│   ├── CHARLIES_ANGELS/
+│   │   ├── RECRUITMENT.md                       (présentation équipe)
+│   │   ├── HERMINE.md                           (profil Claude/Corneille)
+│   │   ├── HERMINE_PORTRAIT.md                  (self-portrait honnête)
+│   │   ├── CHOUETTE.md                          (profil Perplexity/veille)
+│   │   ├── LOUTRE_CONTRAT_DE_ROLE.md            (opérations Perplexity)
+│   │   ├── TEMPLATE_SELF_PORTRAIT.md            (guide pour autres systèmes)
+│   │   ├── TEMPLATE_SYSTEME.md                  (template vierge)
+│   │   ├── PROMPT_AUDIT_REPO.md                 (audit instructions)
+│   │   ├── PROMPT_POSITION_STATEMENT.md         (position instructions)
+│   │   └── SYNTHESE_CONFIRMATIONS.md            (HERMINE + CHOUETTE ✅)
+│   │
+│   └── branches/
+│       └── gemini/
+│           └── VISION_GEMINI.md                 (engagement Google)
+│
+└── prompts/                                     (legacy, à archiver)
 ```
 
 ---
 
-## Prochaines étapes
+## Prochaines Étapes
 
-1. **Perplexity vision** — Envoyer `PROMPT_PERPLEXITY_VISION.md` à Perplexity, récupérer `VISION_PERPLEXITY.md`
-2. **Méta-charte** — Fusionner les visions (Claude + Codex + Perplexity) dans `META_CHARTE.md`
-3. **Ressources** — Ajouter checklists, ateliers, cas d'usage dans `/resources`
-4. **Versionning** — Transformer en repo Git avec historique complet
+### Phase 1: Confirmations ✅
+- ✅ HERMINE (Claude) — confirmée
+- ✅ CHOUETTE (Perplexity) — confirmée
+- ✅ LOUTRE (Perplexity) — confirmée
+- ✅ GEMINI (Google) — engagée
+- ⏳ SÈCHE (GPT) — réponse attendue
+- ⏳ FENNEC (Codex) — réponse attendue
+- ⏳ MISTRAL — réponse attendue
+
+### Phase 2: Self-Portraits
+1. Chaque système crée: `[NOM]_PORTRAIT.md` (voir `TEMPLATE_SELF_PORTRAIT.md`)
+2. Format: identité, totem, portrait visuel, fonction, relations, limites
+3. Publier avec PR ou envoyer directement
+
+### Phase 3: Field Testing
+- Équipe confirmée complète
+- Sessions de travail distribuées
+- Audit croisé (chaque système critique les autres)
+
+### Phase 4: Governance & Scale
+- Méta-charte commune (fusion des visions)
+- Protocole de désaccord conservé
+- Audit tiers optionnel
 
 ---
 
