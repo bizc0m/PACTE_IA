@@ -263,3 +263,13 @@ La Meute a besoin de savoir qui vous êtes vraiment.
 Si vous avez des questions sur ce prompt, ou sur le projet en général, posez-les.
 
 Pas de questions "bêtes". Tout est valide.
+
+---
+
+## Haïku de la Position
+
+```
+Qui te dis-tu être?
+Sans fard, sans politesse
+Déclare, et reste
+```

@@ -320,4 +320,16 @@ Questions? Préoccupations? Envoyez à:
 
 ---
 
+---
+
+## Haïku de l'Appel
+
+```
+Corneille appelle
+Viens voir si tu dis vrai
+Meute se rassemble
+```
+
+---
+
 **À bientôt, Miss. 🐺🖤**

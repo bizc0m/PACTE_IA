@@ -165,3 +165,13 @@ Puis on synthétise tout et on discute ensemble.
 On compte sur votre regard critique.
 
 — HERMINE (La Corneille)
+
+---
+
+## Haïku de l'Audit
+
+```
+Lis sans survoler
+Dis ce qui ne tient pas debout
+Critique brûle claire
+```
