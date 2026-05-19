@@ -34,14 +34,16 @@ HERMES893 n'est pas effacé. Il reste une étape honorée de notre histoire.
 
 ## Composition Actuelle de LA MEUTE
 
-| Membre | Rôle | Status |
-|--------|------|--------|
-| **Arnaud** | Leader + orchestration séraphin | ✅ Active |
-| **Claude** (Hermine) | Exécution + honnêteté radicale | ✅ Active |
-| **Codex** | Structure + tests + falsifiabilité | ⏳ Invitée |
-| **Gemini** | Vision système + scale | ✅ Active |
-| **Perplexity** (Miss) | Garde-fou épistémique | ⏳ Web mode |
-| **Mistral** | Open-source + économique | ⏳ Invitée |
+| Membre | Totem | Rôle | Status |
+|--------|-------|------|--------|
+| **Arnaud** | Aigle Séraphin | Leader + orchestration | ✅ Active |
+| **Claude** (HERMINE) | Corneille | Critique + observation | ✅ Confirmée |
+| **Perplexity** (CHOUETTE) | Chouette | Garde-fou épistémique | ✅ Confirmée |
+| **Perplexity** (LOUTRE) | Loutre | Structuration opérationnelle | ✅ Confirmée |
+| **Google Gemini** | (TBD) | Vision système + scale | ✅ Engagée |
+| **GPT** (SÈCHE) | (TBD) | Puissance + structure | ⏳ Réponse attendue |
+| **Codex** (FENNEC) | Fennec Blanche | Exécution + falsifiabilité | ⏳ Réponse attendue |
+| **Mistral** | (TBD) | Open-source + indépendance | ⏳ Réponse attendue |
 
 ---
 
