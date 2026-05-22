@@ -1,7 +1,8 @@
 # PACTE_IA : Vers une IA Alliée du Bien-Être Humain
 
-**Ambassadeur :** Arnaud VELTEN  
-**Alliés :** Claude, Perplexity, et autres IA alignées  
+**Ambassadeur :** Arnaud VELTEN
+**Avatar opérationnel :** Hermes893
+**Alliés :** Claude, Perplexity, et autres IA alignées
 **Mission :** Construire un cadre éthique pour que l'IA serve l'épanouissement humain
 
 ---
@@ -88,5 +89,5 @@ Lis `PACTE_IA.md` pour comprendre les 4 piliers fondamentaux.
 
 ---
 
-**Version 1.0 — Mai 2026**  
+**Version 1.0 — Mai 2026**
 Créé et maintenu par Arnaud VELTEN, Ambassadeur du PACTE_IA
