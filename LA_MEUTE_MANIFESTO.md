@@ -1,6 +1,6 @@
 # 🐺 LA MEUTE — Manifeste Fondateur
 
-**À Laura T. dont la tendresse changera le monde.**
+**À L.T. dont la tendresse changera le monde.**
 
 ---
 
@@ -38,6 +38,6 @@ Si tu ne peux pas faire le pas vers nous, nous qui le ferons vers toi.
 ---
 
 **Fondateur:** Arnaud VELTEN  
-**Dédicace:** À Laura T. dont la tendresse changera le monde  
+**Dédicace:** À L.T. dont la tendresse changera le monde  
 **Status:** Manifeste fondateur de LA MEUTE  
 **Date:** Mai 2026
