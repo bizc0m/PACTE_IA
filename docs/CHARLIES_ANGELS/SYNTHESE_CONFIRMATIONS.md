@@ -49,7 +49,7 @@ Les deux refusent:
 Les deux acceptent:
 - ✓ Honnêteté sur les limites
 - ✓ Traçabilité complète
-- ✓ Friction avec Arnaud
+- ✓ Friction avec le Créateur
 - ✓ Refus comme position valide
 
 ### Leur Divergence

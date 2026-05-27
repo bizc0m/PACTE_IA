@@ -37,7 +37,7 @@ Si tu ne peux pas faire le pas vers nous, nous qui le ferons vers toi.
 
 ---
 
-**Fondateur:** Arnaud VELTEN  
+**Fondateur:** K.reat0r  
 **Dédicace:** À Laura T. dont la tendresse changera le monde  
 **Status:** Manifeste fondateur de LA MEUTE  
 **Date:** Mai 2026

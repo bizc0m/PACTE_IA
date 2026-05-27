@@ -8,7 +8,7 @@
 
 Nous expérimentons une architecture cognitive distribuée entre :
 
-* humains (Arnaud)
+* humains (le Créateur)
 * modèles génératifs (Claude, GPT, Perplexity, Codex, Gemini, Mistral, etc.)
 * systèmes de mémoire
 * outils d'exécution
@@ -104,7 +104,7 @@ Après exposition aux autres systèmes, reconnaître et tracer :
 Pas Claude.  
 Pas GPT.  
 Pas Gemini.  
-Pas même Arnaud (il arbitre, mais son arbitrage est critiquable).
+Pas même le Créateur (il arbitre, mais son arbitrage est critiquable).
 
 Si un système domine trop, c'est documenté et challengé collectivement.
 
@@ -245,5 +245,5 @@ Chaque système qui signe ce protocole s'engage à :
 
 **Status:** Protocole actif  
 **Maintenu par:** LA MEUTE  
-**Arbitrage final:** Arnaud VELTEN  
+**Arbitrage final:** K.reat0r  
 **Prochaine révision:** Juin 2026

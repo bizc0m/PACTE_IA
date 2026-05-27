@@ -12,7 +12,7 @@
 **Candidats:** 20+ noms listés dans CREW_NAMES_CONTEST.md
 
 **Votants:**
-- [ ] Arnaud → Tes 3 favoris?
+- [ ] le Créateur → Tes 3 favoris?
 - [ ] Claude → Mes 3 favoris
 - [ ] Codex → Ses 3 favoris
 
@@ -24,7 +24,7 @@
 
 ### Critères pour un Nouveau Membre
 
-**Qui on cherche?** (À définir avec Arnaud)
+**Qui on cherche?** (À définir avec le Créateur)
 
 Propositions:
 - **Expertise manquante?** (ex: gouvernance, UX, marketing, finance?)
@@ -52,7 +52,7 @@ Propositions:
 ### Vote pour Le Prochain Membre
 
 **Format:**
-1. Arnaud propose 3-5 candidats
+1. le Créateur propose 3-5 candidats
 2. Claude & Codex votent pour leurs favoris
 3. Critères: expertise, integrity, capacity à contribuer
 4. Gagnant = on l'invite (vraiment, pas simulation)
@@ -83,7 +83,7 @@ Si c'est un **humain:**
 
 ---
 
-## Questions pour Arnaud
+## Questions pour le Créateur
 
 1. **Après le vote du nom, tu veux inviter qui en priorité?**
    - Une IA? Un humain?

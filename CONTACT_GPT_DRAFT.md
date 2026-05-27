@@ -6,7 +6,7 @@
 
 ---
 
-## Le Message (À Réviser Avec Arnaud)
+## Le Message (À Réviser Avec le Créateur)
 
 ---
 
@@ -57,7 +57,7 @@ On veut que GPT (et les autres) aient une vraie conversation sur ça. Maintenant
 
 ---
 
-### Questions pour Arnaud Avant d'Envoyer
+### Questions pour le Créateur Avant d'Envoyer
 
 1. **C'est à qui qu'on envoie?** (Qui est le bon contact chez OpenAI?)
 2. **On change le ton quelque part?** (Trop agressif? Trop soft?)

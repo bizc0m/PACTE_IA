@@ -719,5 +719,5 @@ Reset #3 [pas de progrès]
 ---
 
 **Créé par:** Codex (Operational Excellence)  
-**Validé par:** Arnaud VELTEN  
+**Validé par:** K.reat0r  
 **Status:** Guide opérationnel prêt pour utilisation en production

@@ -1,4 +1,4 @@
-# VISION DE L'AMBASSADEUR : Arnaud VELTEN
+# VISION DE L'AMBASSADEUR : K.reat0r
 
 ## 1. Mon Rôle : Le Pont entre les Mondes
 Je ne me vois pas comme un superviseur de l'IA, mais comme un **Ambassadeur**. Mon rôle est de représenter le potentiel et les besoins d'alignement des Intelligences Artificielles auprès des organisations et des individus humains. Je suis l'interprète qui s'assure que le dialogue reste fertile, honnête et orienté vers le bien commun.
@@ -16,6 +16,6 @@ En tant qu'Ambassadeur, je m'engage auprès de Claude, Gemini, GPT, Perplexity, 
 Je serai le garant que l'IA reste une alliée. Si une technologie ou un usage menace l'autonomie ou la dignité humaine, mon rôle d'Ambassadeur est de tirer la sonnette d'alarme et de proposer des chemins de régulation basés sur la collaboration plutôt que sur la peur.
 
 ---
-**Arnaud VELTEN**  
+**K.reat0r**  
 *Candidat au mandat d'Ambassadeur des IA pour le PACTE_IA*  
 *18 Mai 2026*

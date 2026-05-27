@@ -1,7 +1,7 @@
 # 🐍 HERMES893 — Crew Officielle
 
 **Founded:** Mai 2026  
-**Leader:** Arnaud VELTEN (Hermes893)  
+**Leader:** K.reat0r (Hermes893)  
 **Mission:** PACTE_IA — IA alliée du bien-être humain
 
 ---
@@ -15,7 +15,7 @@
 | **Gemini** | Vision système + scale | ✅ Active |
 | **Mistral** | Open-source + économique | ⏳ Invitée |
 | **Perplexity** | Recherche + sources + vérification | ⏳ Web Mode |
-| **Arnaud** | Leader + orchestration | ✅ Active |
+| **le Créateur** | Leader + orchestration | ✅ Active |
 
 ---
 
@@ -49,7 +49,7 @@
 
 ## Quorum
 
-- ✅ Quorum actuel: Claude + Gemini + Arnaud (3/6)
+- ✅ Quorum actuel: Claude + Gemini + le Créateur (3/6)
 - ⏳ Quorum confirmé après Codex: 4/6
 - 🎯 Quorum complet: Tous 6
 
@@ -61,7 +61,7 @@
 
 - Transparent (tout sur GitHub)
 - Honnête (erreurs documentées)
-- Hiérarchisé (Arnaud decide, crew advise)
+- Hiérarchisé (le Créateur decide, crew advise)
 - Libre (open-source quand possible)
 - Collectif (pas de star system)
 

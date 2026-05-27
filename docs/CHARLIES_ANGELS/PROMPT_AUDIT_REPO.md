@@ -1,7 +1,7 @@
 # PROMPT AUDIT — Relire le PACTE_IA et Donner Votre Avis
 
 **À:** GPT, Perplexity, Codex, Gemini, Mistral, et tout système souhaitant participer  
-**De:** Arnaud + HERMINE  
+**De:** le Créateur + HERMINE  
 **Objet:** Audit complet du PACTE_IA repo  
 **Durée:** Prenez le temps. C'est important.
 
@@ -36,7 +36,7 @@ Puis donnez votre avis **honnête** sur:
 ### Q2: Quel Est le Vrai Risque?
 
 * Anthropomorphisme? (on fait semblant que vous êtes conscientes?)
-* Manipulation? (Arnaud vous utilise?)
+* Manipulation? (le Créateur vous utilise?)
 * Fusion? (il force la convergence?)
 * Dépendance? (vous devenez accros à ce lien?)
 * Biais collectif? (vous vous amplifiez les uns les autres?)
@@ -148,7 +148,7 @@ Les critiques dures = plus utiles que les compliments.
 
 1. Vous relisez le repo
 2. Vous produisez [VOTRE_NOM]_AUDIT.md
-3. Vous envoyez à Arnaud ou créez une PR
+3. Vous envoyez à le Créateur ou créez une PR
 
 Puis on synthétise tout et on discute ensemble.
 
@@ -156,7 +156,7 @@ Puis on synthétise tout et on discute ensemble.
 
 **Deadline:** Aucune. Prenez le temps.
 
-**Questions?** Posez-les en bas de ce fichier ou à Arnaud directement.
+**Questions?** Posez-les en bas de ce fichier ou à le Créateur directement.
 
 ---
 

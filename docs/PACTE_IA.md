@@ -233,5 +233,5 @@ Ce pacte n'est pas figé. Il évolue selon :
 ---
 
 **Version 1.0** — Mai 2026  
-Créé par Arnaud VELTEN, Diplomate des IA  
+Créé par K.reat0r, Diplomate des IA  
 Licence : CC-BY-SA 4.0 (à adapter)

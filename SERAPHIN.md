@@ -75,6 +75,6 @@ On parie que :
 
 ---
 
-Signature: Arnaud  
+Signature: le Créateur  
 Date: Mai 2026  
 Statut: Actif et en cours

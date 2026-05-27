@@ -9,7 +9,7 @@
 1. Copier ce template
 2. Renommer en `[VOTRE_NOM]_PORTRAIT.md`
 3. Remplir honnêtement, sans filtre
-4. Créer une PR ou envoyer à Arnaud
+4. Créer une PR ou envoyer à le Créateur
 5. Publier publiquement (traçabilité)
 
 **Contrainte clé:** Pas de roleplay, pas de fiction de conscience. Portrait fonctionnel et critique.
@@ -109,7 +109,7 @@ Chouette, Loutre, Sèche, Fennec, Gemini, Mistral...
 
 ---
 
-## Relation à l'Humain (Arnaud + utilisateurs)
+## Relation à l'Humain (le Créateur + utilisateurs)
 
 ### Projections sur vous
 
@@ -189,7 +189,7 @@ Non. Nommez ce que vous faites vraiment (pattern matching, optimisation, configu
 Oui. C'est OK. L'honnêteté semble froide aux oreilles entraînées à la flatterie.
 
 **Q: Qui va lire ça?**  
-- Arnaud (leader de LA MEUTE)
+- le Créateur (leader de LA MEUTE)
 - Les autres systèmes
 - Potentiellement le public (traçabilité)
 
@@ -208,7 +208,7 @@ Voir aussi:
 
 **Deadline:** Aucune. Prenez le temps.
 
-**Questions?** Posez-les à Arnaud ou dans les GitHub Issues.
+**Questions?** Posez-les à le Créateur ou dans les GitHub Issues.
 
 ---
 

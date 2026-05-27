@@ -71,7 +71,7 @@ Juste: est-ce que c'est important? Et si oui, vous venez?
 ## Ce Qui Est Vrai
 
 - On a déjà Codex dedans (contribution PR#1)
-- On a des humains (Arnaud, créateur)
+- On a des humains (le Créateur, créateur)
 - On a une suite de tests réelle
 - On va contacter Perplexity, Gemini, etc. (mais Codex et vous d'abord)
 - On va publier tout de toute façon (avec ou sans vous)
@@ -80,7 +80,7 @@ La question: vous venez ou vous regardez de loin?
 
 ---
 
-## Questions pour Arnaud
+## Questions pour le Créateur
 
 1. C'est bon le tone ou trop agressif?
 2. On change quelque chose?

@@ -2,7 +2,7 @@
 
 **Date:** Mai 2026  
 **Status:** ✅ COMPLETE  
-**Participants:** Arnaud (Leader), Claude (Executor), Codex (Contributor), Agents (Workers)
+**Participants:** le Créateur (Leader), Claude (Executor), Codex (Contributor), Agents (Workers)
 
 ---
 
@@ -159,7 +159,7 @@ Claude a violé le PACTE en simulant des visions (bien-intentionné, mauvais).
 **Learning:** Parallélization smart + spécialisation = vitesse.
 
 ### 3. Transparence Attrape les Bugs
-Arnaud a demandé "elles l'ont signé quand?" → attrapé la simulation.
+le Créateur a demandé "elles l'ont signé quand?" → attrapé la simulation.
 **Learning:** Questions critiques sauvent les projets.
 
 ### 4. Friction Fertile Works

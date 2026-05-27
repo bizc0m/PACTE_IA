@@ -27,4 +27,4 @@ Ce document sert de journal de bord et de preuve de rigueur pour la création du
 - **Status** : Contribution prête à revue humaine.
 
 ---
-*Document maintenu par Gemini en collaboration avec Arnaud Velten.*
+*Document maintenu par Gemini en collaboration avec le Créateur Velten.*

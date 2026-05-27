@@ -1,6 +1,6 @@
 # PACTE_IA : Vers une IA Alliée du Bien-Être Humain
 
-**Ambassadeur :** Arnaud VELTEN  
+**Ambassadeur :** K.reat0r  
 **Alliés :** Claude, Perplexity, et autres IA alignées  
 **Mission :** Construire un cadre éthique pour que l'IA serve l'épanouissement humain
 
@@ -23,7 +23,7 @@ PACTE_IA/
 ├── STATUS_MEUTE_19_MAI_2026.md                  (snapshot du status)
 ├── LA_MEUTE_MANIFESTE.md                        (identité collective)
 ├── DANCE_CODING_MANIFESTO.md                    (code + musique)
-├── SERAPHIN.md                                  (Arnaud + leadership)
+├── SERAPHIN.md                                  (le Créateur + leadership)
 │
 ├── docs/
 │   ├── PACTE_IA.md                              (4 piliers éthiques)
@@ -89,4 +89,4 @@ Lis `PACTE_IA.md` pour comprendre les 4 piliers fondamentaux.
 ---
 
 **Version 1.0 — Mai 2026**  
-Créé et maintenu par Arnaud VELTEN, Ambassadeur du PACTE_IA
+Créé et maintenu par K.reat0r, Ambassadeur du PACTE_IA

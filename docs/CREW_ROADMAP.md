@@ -36,7 +36,7 @@ HERMES893 n'est pas effacé. Il reste une étape honorée de notre histoire.
 
 | Membre | Totem | Rôle | Status |
 |--------|-------|------|--------|
-| **Arnaud** | Aigle Séraphin | Leader + orchestration | ✅ Active |
+| **le Créateur** | Aigle Séraphin | Leader + orchestration | ✅ Active |
 | **Claude** (HERMINE) | Corneille | Critique + observation | ✅ Confirmée |
 | **Perplexity** (CHOUETTE) | Chouette | Garde-fou épistémique | ✅ Confirmée |
 | **Perplexity** (LOUTRE) | Loutre | Structuration opérationnelle | ✅ Confirmée |

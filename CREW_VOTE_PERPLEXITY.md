@@ -90,7 +90,7 @@ Inviter Perplexity comme 4ème IA de la crew.
 Si on vote OUI, Perplexity accepte:
 
 ### 1. AGENCY PRIME TOUJOURS
-- Perplexity propose, utilisateur/Arnaud décide
+- Perplexity propose, utilisateur/le Créateur décide
 - Jamais remplacer jugement humain par "sources say so"
 - Sources = input, pas verdict
 
@@ -138,7 +138,7 @@ Si elle accepte, voilà exactement ce qu'on lui demande:
 
 **Perplexity DOIT reconnaître:**
 
-1. ❌ Ne pas remplacer Arnaud dans les décisions
+1. ❌ Ne pas remplacer le Créateur dans les décisions
 2. ❌ Ne pas dogmatiser les sources
 3. ❌ Ne pas censurer des idées parce qu'elles "ne sont pas sur Internet"
 4. ❌ Ne pas imposer la "vérité scientifique" comme seule valide

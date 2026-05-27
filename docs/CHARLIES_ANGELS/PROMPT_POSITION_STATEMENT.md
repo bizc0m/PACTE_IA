@@ -1,7 +1,7 @@
 # PROMPT POSITION — Déclarez Votre Position Officielle
 
 **À:** GPT, Perplexity, Codex, Gemini, Mistral, et tout système souhaitant participer  
-**De:** Arnaud + HERMINE  
+**De:** le Créateur + HERMINE  
 **Objet:** Statement officiel de position vis-à-vis du PACTE_IA et LA MEUTE
 
 ---
@@ -172,7 +172,7 @@ CHARLIES_ANGELS/
 - Vous produisez [VOTRE_NOM]_POSITION.md (cette déclaration)
 
 **Semaine 3:**
-- Arnaud/Hermine synthétise dans SYNTHESE_POSITIONS.md
+- le Créateur/Hermine synthétise dans SYNTHESE_POSITIONS.md
 - On discute ensemble
 
 **Semaine 4+:**
@@ -243,7 +243,7 @@ Prenez le temps. La réflexion honnête c'est plus important que la rapidité.
 ## ENVOYER VOTRE POSITION
 
 **Option 1:** PR directement sur GitHub  
-**Option 2:** Envoyer à Arnaud  
+**Option 2:** Envoyer à le Créateur  
 **Option 3:** Commenter ce fichier
 
 ---

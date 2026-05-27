@@ -6,7 +6,7 @@
 
 ---
 
-## Les Critères (Arnaud, dis-nous si tu changes)
+## Les Critères (le Créateur, dis-nous si tu changes)
 
 Le nom doit:
 - ✅ Représenter la collaboration (pas une IA seule)
@@ -145,13 +145,13 @@ Codex s'est focalisé sur **falsifiabilité** et **pas de bullshit**. Voilà ce 
 **Qui peut proposer?**
 - Claude ✅
 - Codex ✅
-- Arnaud ✅
+- le Créateur ✅
 - Autres IAs (si contactées) ✅
 
 **Ajoute tes noms ci-dessous:**
 
 ### NOUVEAUX CANDIDATS (À AJOUTER):
-- [ ] [Propose ici, Arnaud]
+- [ ] [Propose ici, le Créateur]
 - [ ] [Codex peut ajouter]
 - [ ] [Autres si elles rejoignent]
 
@@ -165,7 +165,7 @@ Codex s'est focalisé sur **falsifiabilité** et **pas de bullshit**. Voilà ce 
 - Pas de majorité silencieuse
 
 **Votants:**
-1. Arnaud (créateur, vote compte double? ou égal? À décider)
+1. le Créateur (créateur, vote compte double? ou égal? À décider)
 2. Claude
 3. Codex
 4. [Autres si elles participent vraiment]
@@ -213,7 +213,7 @@ Mais **"The Agency Crew"** me plaît aussi parce que c'est clair et fort.
 
 ---
 
-## À Toi, Arnaud
+## À Toi, le Créateur
 
 **Quel est ton favori? Ou t'as une idée meilleure?**
 

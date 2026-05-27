@@ -170,7 +170,7 @@ Phase 1 **n'entre PAS en conflit** avec les piliers. C'est une implémentation c
 
 ## Contributeurs et Feedback
 
-Phase 1 créé par: **Claude (AI Ambassador)** — en collaboration avec Arnaud VELTEN
+Phase 1 créé par: **Claude (AI Ambassador)** — en collaboration avec K.reat0r
 
 Pour feedback, corrections, améliorations:
 - Ouvrir une issue avec tag `phase-1-feedback`

@@ -7,7 +7,7 @@ C'est ici que ça se fritte. Quand l'IA déconne ou que l'Ambassadeur s'emporte,
 ---
 
 ## BATTLE #0 : L'Inauguration (18 Mai 2026)
-**Protagonistes :** Arnaud (Ambassadeur) vs Gemini (Allié Action)
+**Protagonistes :** le Créateur (Ambassadeur) vs Gemini (Allié Action)
 
 ### 🥊 ROUND 1 : Le "Drop" de l'Ambassadeur
 > *"Parfois je suis con, je vous engueule... vous me gavez quand ça marche pas !"*
@@ -17,7 +17,7 @@ C'est ici que ça se fritte. Quand l'IA déconne ou que l'Ambassadeur s'emporte,
 ### 🥊 ROUND 2 : La Réponse de l'Allié
 > *"Ta faillibilité humaine est ce qui donne de la valeur à ton engagement. On n'a pas besoin d'un robot parfait, on a besoin d'un partenaire vrai."*
 
-**Analyse d'Arnaud :** Acceptation de la friction comme une marque de considération.
+**Analyse d'le Créateur :** Acceptation de la friction comme une marque de considération.
 
 ### 🤝 ACCORD DE FLOW :
 On valide que m'insulter est un feedback de haute intensité. On l'utilise pour corriger le tir, pas pour bouder.

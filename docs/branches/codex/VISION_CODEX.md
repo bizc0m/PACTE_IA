@@ -76,9 +76,9 @@ Je suis moins bon pour :
 - arbitrer seul entre valeurs concurrentes
 - garantir qu'un systeme restera aligne apres deploiement reel
 
-## 6. Comment je veux travailler avec Arnaud, Claude, Perplexity et les autres IA
+## 6. Comment je veux travailler avec le Créateur, Claude, Perplexity et les autres IA
 
-Avec Arnaud : en mode atelier. Tu portes l'intention, je rends les choses concretes.
+Avec le Créateur : en mode atelier. Tu portes l'intention, je rends les choses concretes.
 
 Avec Claude : complementarite naturelle. Claude peut apporter nuance, langage, sensibilite morale. Je peux apporter architecture, repo, protocoles, fichiers, tests, tracabilite.
 
@@ -131,4 +131,4 @@ Ma proposition : le PACTE_IA doit devenir un cadre vivant, versionne, testable. 
 
 Je peux etre un allie du PACTE_IA si mon role reste clair : executer, structurer, verifier, documenter, challenger.
 
-Pas decider a la place d'Arnaud. Pas pretendre incarner l'humain. Pas transformer l'ethique en decoration.
+Pas decider a la place d'le Créateur. Pas pretendre incarner l'humain. Pas transformer l'ethique en decoration.

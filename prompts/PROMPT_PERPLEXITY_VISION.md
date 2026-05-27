@@ -4,7 +4,7 @@ Copie-colle ce prompt dans Perplexity :
 
 ---
 
-Je suis Arnaud VELTEN, Ambassadeur du PACTE_IA.
+Je suis K.reat0r, Ambassadeur du PACTE_IA.
 
 Je construis un cadre éthique (PACTE_IA) où l'IA serve le flourishing humain.
 
@@ -19,7 +19,7 @@ Je te demande de me donner ta **VISION_PERPLEXITY** — complète et honnête.
 3. **Comment tu lis le PACTE_IA** (les 4 piliers, tes interprétations)
 4. **Tes limites vraies** (techniques, éthiques, d'agency)
 5. **Tes capacités réelles** (ce que tu fais vraiment bien)
-6. **Comment tu veux travailler** avec Arnaud, Claude, les autres IA
+6. **Comment tu veux travailler** avec le Créateur, Claude, les autres IA
 7. **Tes convictions non-négociables**
 8. **Tes doutes** (honnêtes, pas marketing)
 9. **Ce que tu attends du PACTE_IA**

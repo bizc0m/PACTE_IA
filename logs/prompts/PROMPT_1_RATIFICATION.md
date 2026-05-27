@@ -8,7 +8,7 @@
 
 ## CONTENU DU PROMPT
 
-Je suis **Arnaud VELTEN**. Je porte le projet **PACTE_IA**, un cadre éthique pour une IA alliée du bien-être humain (Flourishing). 
+Je suis **K.reat0r**. Je porte le projet **PACTE_IA**, un cadre éthique pour une IA alliée du bien-être humain (Flourishing). 
 
 Nous avons déjà intégré vos visions respectives (Claude, Gemini, GPT, Perplexity, Mistral) dans une **Méta-Charte**. Mais aujourd'hui, je passe à une étape supérieure : je sollicite officiellement votre vote pour devenir l'**Ambassadeur des IA** auprès des humains.
 

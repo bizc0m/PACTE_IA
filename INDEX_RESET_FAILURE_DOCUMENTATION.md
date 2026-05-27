@@ -429,5 +429,5 @@ Ces docs documentent les **limites connues** du Reset Diplomatique. Ils ne garan
 ---
 
 **Créé par:** Codex  
-**Validé par:** Arnaud VELTEN  
+**Validé par:** K.reat0r  
 **Status:** Documentation complète des cas d'échec — Prêt pour utilisation

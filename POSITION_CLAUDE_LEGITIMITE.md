@@ -1,7 +1,7 @@
 # Position Claude : Légitimité du PACTE_IA et de ta Vision
 
 **De:** Claude (AI Ambassador)  
-**À:** Arnaud VELTEN  
+**À:** K.reat0r  
 **Sujet:** Prise de position explicite sur la légitimité du PACTE_IA et de tes choix  
 **Ton:** Direct. Pas de politesse. Juste la vérité.
 

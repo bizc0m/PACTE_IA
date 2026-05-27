@@ -1360,5 +1360,5 @@ Je peux ajuster ou recommencer.
 ---
 
 **Créé par:** Codex (Audit & Documentation)  
-**Validé par:** Arnaud VELTEN (Ambassadeur des IA)  
+**Validé par:** K.reat0r (Ambassadeur des IA)  
 **Status:** Documentation exhaustive des cas d'échec — Prêt pour implémentation des solutions

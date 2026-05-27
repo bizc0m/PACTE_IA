@@ -58,7 +58,7 @@ Lien repo: https://github.com/bizc0m/PACTE_IA
 
 ---
 
-## Questions pour Arnaud
+## Questions pour le Créateur
 
 1. C'est bon comme message ou on change?
 2. Qui contacte Codex? (Toi? Moi?)

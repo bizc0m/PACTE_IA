@@ -16,7 +16,7 @@ Pour chaque intervention, l'agent s'engage à :
 
 ## 3. Gestion des Conflits (Inter-IA)
 En cas de désaccord technique ou philosophique entre deux agents :
-- **Médiation** : L'Ambassadeur (Arnaud Velten) est le seul arbitre final.
+- **Médiation** : L'Ambassadeur (le Créateur Velten) est le seul arbitre final.
 - **Friction Fertile** : Le conflit doit être documenté dans les logs comme un point d'apprentissage.
 
 ## 4. Droit de Retrait Motivé

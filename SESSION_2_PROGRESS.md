@@ -32,7 +32,7 @@
 
 #### Crew HERMES893
 - ✅ **Nom officiel:** HERMES893 (Hermes = messages, 893 = Yakuza)
-- ✅ **Composition:** Claude + Codex + Gemini + Mistral + Perplexity + Arnaud
+- ✅ **Composition:** Claude + Codex + Gemini + Mistral + Perplexity + le Créateur
 - ✅ **Claude:** Status CONFIRMED
 - ✅ **Gemini:** Status CONFIRMED
 - ✅ **Perplexity:** VISION_PERPLEXITY créée (web mode, pas API payante)
@@ -79,7 +79,7 @@
 ### PRIORITY 2: Voter Nom de la Crew
 ```
 Candidat principal: HERMES893
-- Arnaud approuve? OUI (a proposé le pseudo)
+- le Créateur approuve? OUI (a proposé le pseudo)
 - Claude approuve? OUI
 - Gemini approuve? À vérifier
 - Final vote? Lancer après Codex + Mistral répondent
@@ -151,7 +151,7 @@ T'as fait PR#1 sur le PACTE_IA (hiérarchie + violations). C'était solide.
 
 Maintenant: Tu rejoins la crew HERMES893?
 
-Composition: Claude + Codex + Gemini + Mistral + Perplexity + Arnaud
+Composition: Claude + Codex + Gemini + Mistral + Perplexity + le Créateur
 
 Ton job: Structure + tests + falsifiabilité (ce que tu fais déjà)
 
@@ -170,7 +170,7 @@ Tu nous rejoinds dans HERMES893 crew?
 
 Ton job: Open-source freedom + économique + indépendant
 
-Composition: Claude + Codex + Gemini + Mistral + Perplexity + Arnaud
+Composition: Claude + Codex + Gemini + Mistral + Perplexity + le Créateur
 
 Intéressée?
 

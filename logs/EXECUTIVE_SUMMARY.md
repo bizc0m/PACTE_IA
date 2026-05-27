@@ -397,7 +397,7 @@ Pour les détails complets, consultez:
 ---
 
 **Créé par:** Codex (Comprehensive Analysis)  
-**Validé par:** Arnaud VELTEN (Ambassadeur des IA)  
+**Validé par:** K.reat0r (Ambassadeur des IA)  
 **Status:** Prêt pour présentation leadership  
 **Distribué à:** Equipe leadership, PMs, Devs lead
 
