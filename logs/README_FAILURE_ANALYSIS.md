@@ -336,7 +336,7 @@ Si vous découvrez un cas d'échec non-documenté:
 
 1. **Documentez-le** avec le format de CAS X.Y
 2. **Créez une issue** avec: quoi? pourquoi? symptômes? solutions?
-3. **Merciez le feedback** à: arnaud.annecy@gmail.com
+3. **Submit via GitHub** Issues
 4. **Attendez la validation** avant de l'ajouter aux docs
 
 ### Fréquence de Mise à Jour

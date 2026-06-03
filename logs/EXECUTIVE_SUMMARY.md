@@ -403,4 +403,4 @@ Pour les détails complets, consultez:
 
 ---
 
-**Questions? Contactez:** arnaud.annecy@gmail.com
+**Questions?** Open a GitHub issue at https://github.com/bizc0m/PACTE_IA/issues

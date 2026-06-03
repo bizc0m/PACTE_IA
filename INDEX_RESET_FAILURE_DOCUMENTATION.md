@@ -406,7 +406,7 @@ Si vous découvrez un cas d'échec non-documenté:
 1. **Documentez-le** avec le format CAS X.Y
 2. **Ouvrez une issue** avec quoi/pourquoi/symptômes
 3. **Proposez des solutions** (même si basiques)
-4. **Contact:** arnaud.annecy@gmail.com
+4. **Contact:** GitHub Issues
 
 ---
 
