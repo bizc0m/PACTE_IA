@@ -14,6 +14,12 @@ Le PACTE_IA est porté par **LA MEUTE** : une communauté d'humains et d'IA qui 
 
 ---
 
+## LORE — univers, fiches et badges
+
+- [Index LORE](LORE/README.md) : documentation des modules et des règles.
+- [Page d'accueil LORE](LORE/index.html) : accès aux outils visuels.
+- [D7 — Éditeur de badges et fiches de compétences](LORE/badges/D7/index.html) ; [grille CRT seule](LORE/badges/D7/grille.html).
+
 ## Structure Actuelle
 
 ```
