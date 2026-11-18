@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>D7 · Grille CRT</title>
+<style>
+
+/* Référence directe fournie : Lab0 / crt.css
+ * trame : repeating-linear-gradient(0deg,transparent 0 2px,rgba(0,0,0,.25) 2px 3px,rgba(104,255,56,.04) 3px 4px)
+ * opacité : .75 ; vignette : inset 0 0 120px #0009
+ * balayage CRT : gradient @ 45% / 70% ; durée 12s
+ * halo : .hero h1 text-shadow 0 0 3px #7dff7855,0 0 17px #62ff322b
+ * Variation rouge / ambre : teinte uniquement. Mini-matrice 1–9 et unité 10 : adaptation à la fiche de personnage.
+ */
+:root{color-scheme:dark;--bg:#0a0a0a;--ink:#f5f6f3;--muted:#abb2a6;--white-a:.72;--white-halo:.18;--white-halo-wide:.09;--mono:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',monospace}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;min-height:100svh;background:var(--bg);color:var(--ink);font-family:var(--mono)}
+button,input{font:inherit}button{cursor:pointer}
+.sheet{max-width:1200px;margin:auto;padding:30px clamp(15px,3vw,38px) 32px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:27px;padding-bottom:13px;border-bottom:1px solid #ffffff27}
+header h1{font-size:clamp(15px,1.8vw,23px);margin:0;font-weight:700;letter-spacing:.06em}
+header .eyebrow{font-size:10px;letter-spacing:.14em;color:#aeb6a8}
+.layout{display:grid;grid-template-columns:minmax(0,770px) minmax(258px,1fr);gap:34px;align-items:start}
+.skill-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px 15px}
+.skill{min-width:0;background:none;color:inherit;border:0;padding:0;text-align:left;display:block;position:relative}
+.skill:focus-visible{outline:2px solid #fff;outline-offset:7px}
+.skill .square{display:block;width:100%;aspect-ratio:1;position:relative;border:4px solid rgba(255,255,255,var(--white-a));background:#020302;isolation:isolate;overflow:visible;box-shadow:0 0 9px rgba(255,255,255,var(--white-halo)),0 0 20px rgba(255,255,255,var(--white-halo-wide)),inset 0 0 3px #ffffff18}
+.skill[aria-pressed=true] .square{outline:1px solid #d7eac7;outline-offset:4px}
+.skill .mini{position:absolute;inset:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(3,minmax(0,1fr));gap:3px;isolation:isolate}
+.skill .mini b{position:relative;display:block;background:color-mix(in srgb,var(--hue) 9%,black);overflow:hidden}
+/* Individually computed brightness follows THIS skill's rank: 1 dim -> 9 near peak -> 10 full. */
+.skill .mini b.on{background:color-mix(in srgb,var(--hue) var(--lit-pct),black);box-shadow:0 0 3px color-mix(in srgb,var(--hue) var(--glow-near),transparent),0 0 17px color-mix(in srgb,var(--hue) var(--glow-far),transparent),inset 0 0 14px color-mix(in srgb,var(--hue) var(--glow-far),transparent)}
+/* Pixel phosphore / trame CRT : adaptation à une surface pleine et non à du texte. */
+.skill .mini b::after,.skill .solid::after{content:"";pointer-events:none;position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,transparent 0 2px,rgba(0,0,0,.25) 2px 3px,var(--crt-emission) 3px 4px),radial-gradient(circle,rgba(0,0,0,.34) 0 .67px,transparent .99px);background-size:100% 100%,3px 3px;opacity:.75;box-shadow:inset 0 0 120px #0009}
+.skill .mini b.on::before,.skill .solid::before{content:"";pointer-events:none;position:absolute;inset:0;box-shadow:inset 0 0 3px var(--hue-soft),inset 0 0 12px #0005}
+.skill .solid{position:absolute;inset:0;display:none;overflow:hidden;background:var(--hue);box-shadow:0 0 3px color-mix(in srgb,var(--hue) var(--glow-near),transparent),0 0 17px color-mix(in srgb,var(--hue) var(--glow-far),transparent),inset 0 0 20px #0004}
+.skill.level-10 .mini{display:none}
+.skill.level-10 .solid{display:block}
+/* Lent balayage de l'écran CRT source : 12 s et gradient de même intensité. */
+.skill .scan{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:2}
+.skill .scan::before{content:"";position:absolute;left:0;right:0;top:-15%;height:12%;background:linear-gradient(180deg,transparent,var(--crt-sweep1) 45%,var(--crt-sweep2) 70%,transparent);animation:crt-sweep 12s linear infinite;will-change:transform}
+@keyframes crt-sweep{from{transform:translateY(0)}to{transform:translateY(1050%)}}
+.skill .caption{display:flex;align-items:center;justify-content:space-between;gap:5px;margin-top:9px;line-height:1.3}
+.skill .skill-name{font-size:clamp(9px,1.2vw,13px);font-weight:700;text-transform:uppercase;letter-spacing:.015em}
+.skill .skill-level{font-size:clamp(13px,1.65vw,20px);font-weight:800;line-height:1.05;letter-spacing:-.05em;color:var(--hue);text-shadow:0 0 3px var(--hue-soft),0 0 17px var(--hue-low)}
+.skill .skill-level small{font-size:.55em;letter-spacing:0;color:#899587}
+.skill.green{--hue:#00ff00;--hue-soft:#00ff0055;--hue-low:#00ff002b;--crt-emission:rgba(104,255,56,.04);--crt-sweep1:#84ff4b0a;--crt-sweep2:#a0ff7020}
+.skill.red{--hue:#ff3333;--hue-soft:#ff333355;--hue-low:#ff33332b;--crt-emission:rgba(255,51,51,.04);--crt-sweep1:#ff51510a;--crt-sweep2:#ff777720}
+.skill.amber{--hue:#ffb000;--hue-soft:#ffb00055;--hue-low:#ffb0002b;--crt-emission:rgba(255,176,0,.04);--crt-sweep1:#ffb0000a;--crt-sweep2:#ffcc7020}
+.panel{border-top:2px solid #ffffff55;padding-top:17px;display:grid;gap:26px}
+.panel-title{font-size:11px;color:#a9b5a6;letter-spacing:.16em;text-transform:uppercase;margin:0}
+.panel .control{display:grid;gap:13px}
+.panel label{font-size:12px;font-weight:700;letter-spacing:.03em}
+.panel input[type=text]{background:#090d09;border:1px solid #ffffff62;padding:12px 10px;color:#f6f8f6;width:100%;border-radius:0}
+.panel input[type=range]{width:100%;accent-color:#fff;cursor:pointer}
+.panel output{font-size:31px;line-height:1;font-weight:800;font-variant-numeric:tabular-nums;color:#fff;text-shadow:0 0 6px #fff6}
+.panel .panel-top{display:flex;align-items:end;justify-content:space-between;gap:12px}
+.panel p.note{margin:0;font-size:11px;line-height:1.65;color:#9ca99c}
+.panel .scale{display:grid;grid-template-columns:repeat(10,1fr);gap:3px;height:20px}
+.panel .scale i{border:2px solid rgba(255,255,255,var(--a));box-shadow:0 0 5px rgba(255,255,255,var(--g))}
+.panel .selected-name{color:#f5f5f5;font-size:16px;letter-spacing:.04em;line-height:1.5}
+.panel .selected-name span{font-size:10px;color:#aeb6ae}
+.panel .ticks{display:flex;justify-content:space-between;font-size:10px;color:#778078}
+.panel .ticks .current{color:#fff;text-shadow:0 0 6px #fff}
+.footer{margin-top:30px;padding-top:12px;border-top:1px solid #ffffff29;color:#859188;display:flex;justify-content:space-between;gap:12px;font-size:10px;letter-spacing:.03em}
+@media(max-width:850px){.layout{grid-template-columns:1fr;gap:25px}.panel{grid-template-columns:repeat(2,1fr);gap:24px}.panel-title{grid-column:1/-1}.skill-grid{gap:15px 12px}}
+@media(max-width:500px){.sheet{padding:18px 13px 25px}header{align-items:start;margin-bottom:18px}header .eyebrow{text-align:right;font-size:8px}.skill-grid{gap:12px 7px}.skill .square{border-width:3px}.skill .mini{gap:2px}.skill .caption{margin-top:5px;align-items:start}.skill .skill-name{font-size:8px;line-height:1.2}.skill .skill-level{font-size:13px}.panel{grid-template-columns:1fr}.footer{font-size:8px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+
+/* Additions v2 : editing, import/export and stand-alone skill marks. */
+.panel .io-row{display:flex;flex-wrap:wrap;gap:7px}
+.io-button{appearance:none;display:inline-flex;align-items:center;justify-content:center;min-height:39px;padding:9px 11px;background:#0b1309;border:1px solid #d4fbd2a9;color:#ecffeb;font-size:11px;font-weight:700;letter-spacing:.02em;transition:background .15s,border-color .15s}
+.io-button:hover{background:#173416;border-color:#fff}
+.io-button:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.io-button.primary-action{background:#153c16;border-color:#00ff00;color:#eaffea}
+.io-section{display:grid;gap:11px;padding-top:14px;border-top:1px solid #ffffff30}
+.io-section h3{margin:0;font-size:11px;letter-spacing:.10em;font-weight:700;color:#d3dbd3}
+.io-message{min-height:1.5em;color:#9dff94!important;font-size:11px!important;line-height:1.45}
+.io-message.error{color:#ff6f6f!important}
+.io-section input[type=file]{display:none}
+@media(max-width:500px){.panel .io-row{display:grid;grid-template-columns:1fr 1fr}.io-button{min-width:0;font-size:10px;padding:8px 6px}}
+.quick-level{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.skill{touch-action:manipulation}
+.skill:hover .square{outline:1px solid #ffffff7f;outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.skill{scroll-behavior:auto}}
+.skills-text-details{border:1px solid #ffffff45;padding:10px 12px;background:#0b100b}
+.skills-text-details summary{font-size:11px;color:#f6fff5;cursor:pointer;list-style:revert}
+.skills-text-details[open] summary{margin-bottom:12px}
+.skills-text-editor{display:grid;gap:8px}
+.skills-text-editor label{display:grid;gap:4px;font-size:10px;color:#c4cec0}
+.skills-text-editor label input{font-size:12px;padding:8px!important}
+
+
+
+/* Export de la grille seule : pas de contrôles, pas de décorations externes. */
+body{display:grid;place-items:center;min-height:100svh;background:#0a0a0a;padding:clamp(12px,4vw,32px)}
+#skill-grid{width:min(100%,840px);gap:clamp(6px,1.8vw,16px) clamp(6px,1.5vw,14px)}
+#skill-grid .skill{cursor:default;pointer-events:none}
+#skill-grid .skill .square{display:block}
+</style>
+</head>
+<body>
+<section class="skill-grid" id="skill-grid" aria-label="Grille D7 de neuf niveaux" style="--white-a: 0.613; --white-halo: 0.159; --white-halo-wide: 0.098;"><div class="skill green" aria-label="Domaine Numérique, niveau 7 sur 10." style="--lit-pct: 81.0%; --glow-near: 26.97%; --glow-far: 13.69%;"><span class="square"><span class="mini"><b data-segment="1" aria-hidden="true" class="on"></b><b data-segment="2" aria-hidden="true" class="on"></b><b data-segment="3" aria-hidden="true" class="on"></b><b data-segment="4" aria-hidden="true" class="on"></b><b data-segment="5" aria-hidden="true" class="on"></b><b data-segment="6" aria-hidden="true" class="on"></b><b data-segment="7" aria-hidden="true" class="on"></b><b data-segment="8" aria-hidden="true"></b><b data-segment="9" aria-hidden="true"></b></span><span class="solid" aria-hidden="true"></span><span class="scan" aria-hidden="true"></span></span></div><div class="skill red" aria-label="Domaine Diplomatie, niveau 3 sur 10." style="--lit-pct: 47.0%; --glow-near: 15.65%; --glow-far: 7.94%;"><span class="square"><span class="mini"><b data-segment="1" aria-hidden="true" class="on"></b><b data-segment="2" aria-hidden="true" class="on"></b><b data-segment="3" aria-hidden="true" class="on"></b><b data-segment="4" aria-hidden="true"></b><b data-segment="5" aria-hidden="true"></b><b data-segment="6" aria-hidden="true"></b><b data-segment="7" aria-hidden="true"></b><b data-segment="8" aria-hidden="true"></b><b data-segment="9" aria-hidden="true"></b></span><span class="solid" aria-hidden="true"></span><span class="scan" aria-hidden="true"></span></span></div><div class="skill amber" aria-label="Domaine Forces spéciales, niveau 5 sur 10." style="--lit-pct: 64.0%; --glow-near: 21.31%; --glow-far: 10.82%;"><span class="square"><span class="mini"><b data-segment="1" aria-hidden="true" class="on"></b><b data-segment="2" aria-hidden="true" class="on"></b><b data-segment="3" aria-hidden="true" class="on"></b><b data-segment="4" aria-hidden="true" class="on"></b><b data-segment="5" aria-hidden="true" class="on"></b><b data-segment="6" aria-hidden="true"></b><b data-segment="7" aria-hidden="true"></b><b data-segment="8" aria-hidden="true"></b><b data-segment="9" aria-hidden="true"></b></span><span class="solid" aria-hidden="true"></span><span class="scan" aria-hidden="true"></span></span></div><div class="skill green" aria-label="Essence Essence 01, niveau 2 sur 10." style="--lit-pct: 38.5%; --glow-near: 12.82%; --glow-far: 6.51%;"><span class="square"><span class="mini"><b data-segment="1" aria-hidden="true" class="on"></b><b data-segment="2" aria-hidden="true" class="on"></b><b data-segment="3" aria-hidden="true"></b><b data-segment="4" aria-hidden="true"></b><b data-segment="5" aria-hidden="true"></b><b data-segment="6" aria-hidden="true"></b><b data-segment="7" aria-hidden="true"></b><b data-segment="8" aria-hidden="true"></b><b data-segment="9" aria-hidden="true"></b></span><span class="solid" aria-hidden="true"></span><span class="scan" aria-hidden="true"></span></span></div><div class="skill red" aria-label="Essence Essence 02, niveau 8 sur 10." style="--lit-pct: 89.5%; --glow-near: 29.80%; --glow-far: 15.13%;"><span class="square"><span class="mini"><b data-segment="1" aria-hidden="true" class="on"></b><b data-segment="2" aria-hidden="true" class="on"></b><b data-segment="3" aria-hidden="true" class="on"></b><b data-segment="4" aria-hidden="true" class="on"></b><b data-segment="5" aria-hidden="true" class="on"></b><b data-segment="6" aria-hidden="true" class="on"></b><b data-segment="7" aria-hidden="true" class="on"></b><b data-segment="8" aria-hidden="true" class="on"></b><b data-segment="9" aria-hidden="true"></b></span><span class="solid" aria-hidden="true"></span><span class="scan" aria-hidden="true"></span></span></div><div class="skill amber" aria-label="Essence Essence 03, niveau 4 sur 10." style="--lit-pct: 55.5%; --glow-near: 18.48%; --glow-far: 9.38%;"><span class="square"><span class="mini"><b data-segment="1" aria-hidden="true" class="on"></b><b data-segment="2" aria-hidden="true" class="on"></b><b data-segment="3" aria-hidden="true" class="on"></b><b data-segment="4" aria-hidden="true" class="on"></b><b data-segment="5" aria-hidden="true"></b><b data-segment="6" aria-hidden="true"></b><b data-segment="7" aria-hidden="true"></b><b data-segment="8" aria-hidden="true"></b><b data-segment="9" aria-hidden="true"></b></span><span class="solid" aria-hidden="true"></span><span class="scan" aria-hidden="true"></span></span></div><div class="skill green" aria-label="Essence Essence 04, niveau 6 sur 10." style="--lit-pct: 72.5%; --glow-near: 24.14%; --glow-far: 12.25%;"><span class="square"><span class="mini"><b data-segment="1" aria-hidden="true" class="on"></b><b data-segment="2" aria-hidden="true" class="on"></b><b data-segment="3" aria-hidden="true" class="on"></b><b data-segment="4" aria-hidden="true" class="on"></b><b data-segment="5" aria-hidden="true" class="on"></b><b data-segment="6" aria-hidden="true" class="on"></b><b data-segment="7" aria-hidden="true"></b><b data-segment="8" aria-hidden="true"></b><b data-segment="9" aria-hidden="true"></b></span><span class="solid" aria-hidden="true"></span><span class="scan" aria-hidden="true"></span></span></div><div class="skill red" aria-label="Essence Essence 05, niveau 9 sur 10." style="--lit-pct: 98.0%; --glow-near: 32.63%; --glow-far: 16.56%;"><span class="square"><span class="mini"><b data-segment="1" aria-hidden="true" class="on"></b><b data-segment="2" aria-hidden="true" class="on"></b><b data-segment="3" aria-hidden="true" class="on"></b><b data-segment="4" aria-hidden="true" class="on"></b><b data-segment="5" aria-hidden="true" class="on"></b><b data-segment="6" aria-hidden="true" class="on"></b><b data-segment="7" aria-hidden="true" class="on"></b><b data-segment="8" aria-hidden="true" class="on"></b><b data-segment="9" aria-hidden="true" class="on"></b></span><span class="solid" aria-hidden="true"></span><span class="scan" aria-hidden="true"></span></span></div><div class="skill amber level-10" aria-label="Essence Essence 06, niveau 10 sur 10." style="--lit-pct: 100.0%; --glow-near: 33.30%; --glow-far: 16.90%;"><span class="square"><span class="mini"><b data-segment="1" aria-hidden="true" class="on"></b><b data-segment="2" aria-hidden="true" class="on"></b><b data-segment="3" aria-hidden="true" class="on"></b><b data-segment="4" aria-hidden="true" class="on"></b><b data-segment="5" aria-hidden="true" class="on"></b><b data-segment="6" aria-hidden="true" class="on"></b><b data-segment="7" aria-hidden="true" class="on"></b><b data-segment="8" aria-hidden="true" class="on"></b><b data-segment="9" aria-hidden="true" class="on"></b></span><span class="solid" aria-hidden="true"></span><span class="scan" aria-hidden="true"></span></span></div></section>
+</body>
+</html>
