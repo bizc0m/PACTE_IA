@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>D7 · Fiche de compétences — Éditeur V5</title>
+<style>
+/* Référence directe fournie : Lab0 / crt.css
+ * trame : repeating-linear-gradient(0deg,transparent 0 2px,rgba(0,0,0,.25) 2px 3px,rgba(104,255,56,.04) 3px 4px)
+ * opacité : .75 ; vignette : inset 0 0 120px #0009
+ * balayage CRT : gradient @ 45% / 70% ; durée 12s
+ * halo : .hero h1 text-shadow 0 0 3px #7dff7855,0 0 17px #62ff322b
+ * Variation rouge / ambre : teinte uniquement. Mini-matrice 1–9 et unité 10 : adaptation à la fiche de personnage.
+ */
+:root{color-scheme:dark;--bg:#0a0a0a;--ink:#f5f6f3;--muted:#abb2a6;--white-a:.72;--white-halo:.18;--white-halo-wide:.09;--mono:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',monospace}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;min-height:100svh;background:var(--bg);color:var(--ink);font-family:var(--mono)}
+button,input{font:inherit}button{cursor:pointer}
+.sheet{max-width:1200px;margin:auto;padding:30px clamp(15px,3vw,38px) 32px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:27px;padding-bottom:13px;border-bottom:1px solid #ffffff27}
+header h1{font-size:clamp(15px,1.8vw,23px);margin:0;font-weight:700;letter-spacing:.06em}
+header .eyebrow{font-size:10px;letter-spacing:.14em;color:#aeb6a8}
+.layout{display:grid;grid-template-columns:minmax(0,770px) minmax(258px,1fr);gap:34px;align-items:start}
+.skill-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px 15px}
+.skill{min-width:0;background:none;color:inherit;border:0;padding:0;text-align:left;display:block;position:relative}
+.skill:focus-visible{outline:2px solid #fff;outline-offset:7px}
+.skill .square{display:block;width:100%;aspect-ratio:1;position:relative;border:4px solid rgba(255,255,255,var(--white-a));background:#020302;isolation:isolate;overflow:visible;box-shadow:0 0 9px rgba(255,255,255,var(--white-halo)),0 0 20px rgba(255,255,255,var(--white-halo-wide)),inset 0 0 3px #ffffff18}
+.skill[aria-pressed=true] .square{outline:1px solid #d7eac7;outline-offset:4px}
+.skill .mini{position:absolute;inset:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(3,minmax(0,1fr));gap:3px;isolation:isolate}
+.skill .mini b{position:relative;display:block;background:color-mix(in srgb,var(--hue) 9%,black);overflow:hidden}
+/* Individually computed brightness follows THIS skill's rank: 1 dim -> 9 near peak -> 10 full. */
+.skill .mini b.on{background:color-mix(in srgb,var(--hue) var(--lit-pct),black);box-shadow:0 0 3px color-mix(in srgb,var(--hue) var(--glow-near),transparent),0 0 17px color-mix(in srgb,var(--hue) var(--glow-far),transparent),inset 0 0 14px color-mix(in srgb,var(--hue) var(--glow-far),transparent)}
+/* Pixel phosphore / trame CRT : adaptation à une surface pleine et non à du texte. */
+.skill .mini b::after,.skill .solid::after{content:"";pointer-events:none;position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,transparent 0 2px,rgba(0,0,0,.25) 2px 3px,var(--crt-emission) 3px 4px),radial-gradient(circle,rgba(0,0,0,.34) 0 .67px,transparent .99px);background-size:100% 100%,3px 3px;opacity:.75;box-shadow:inset 0 0 120px #0009}
+.skill .mini b.on::before,.skill .solid::before{content:"";pointer-events:none;position:absolute;inset:0;box-shadow:inset 0 0 3px var(--hue-soft),inset 0 0 12px #0005}
+.skill .solid{position:absolute;inset:0;display:none;overflow:hidden;background:var(--hue);box-shadow:0 0 3px color-mix(in srgb,var(--hue) var(--glow-near),transparent),0 0 17px color-mix(in srgb,var(--hue) var(--glow-far),transparent),inset 0 0 20px #0004}
+.skill.level-10 .mini{display:none}
+.skill.level-10 .solid{display:block}
+/* Lent balayage de l'écran CRT source : 12 s et gradient de même intensité. */
+.skill .scan{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:2}
+.skill .scan::before{content:"";position:absolute;left:0;right:0;top:-15%;height:12%;background:linear-gradient(180deg,transparent,var(--crt-sweep1) 45%,var(--crt-sweep2) 70%,transparent);animation:crt-sweep 12s linear infinite;will-change:transform}
+@keyframes crt-sweep{from{transform:translateY(0)}to{transform:translateY(1050%)}}
+.skill .caption{display:flex;align-items:center;justify-content:space-between;gap:5px;margin-top:9px;line-height:1.3}
+.skill .skill-name{font-size:clamp(9px,1.2vw,13px);font-weight:700;text-transform:uppercase;letter-spacing:.015em}
+.skill .skill-level{font-size:clamp(13px,1.65vw,20px);font-weight:800;line-height:1.05;letter-spacing:-.05em;color:var(--hue);text-shadow:0 0 3px var(--hue-soft),0 0 17px var(--hue-low)}
+.skill .skill-level small{font-size:.55em;letter-spacing:0;color:#899587}
+.skill.green{--hue:#00ff00;--hue-soft:#00ff0055;--hue-low:#00ff002b;--crt-emission:rgba(104,255,56,.04);--crt-sweep1:#84ff4b0a;--crt-sweep2:#a0ff7020}
+.skill.red{--hue:#ff3333;--hue-soft:#ff333355;--hue-low:#ff33332b;--crt-emission:rgba(255,51,51,.04);--crt-sweep1:#ff51510a;--crt-sweep2:#ff777720}
+.skill.amber{--hue:#ffb000;--hue-soft:#ffb00055;--hue-low:#ffb0002b;--crt-emission:rgba(255,176,0,.04);--crt-sweep1:#ffb0000a;--crt-sweep2:#ffcc7020}
+.panel{border-top:2px solid #ffffff55;padding-top:17px;display:grid;gap:26px}
+.panel-title{font-size:11px;color:#a9b5a6;letter-spacing:.16em;text-transform:uppercase;margin:0}
+.panel .control{display:grid;gap:13px}
+.panel label{font-size:12px;font-weight:700;letter-spacing:.03em}
+.panel input[type=text]{background:#090d09;border:1px solid #ffffff62;padding:12px 10px;color:#f6f8f6;width:100%;border-radius:0}
+.panel input[type=range]{width:100%;accent-color:#fff;cursor:pointer}
+.panel output{font-size:31px;line-height:1;font-weight:800;font-variant-numeric:tabular-nums;color:#fff;text-shadow:0 0 6px #fff6}
+.panel .panel-top{display:flex;align-items:end;justify-content:space-between;gap:12px}
+.panel p.note{margin:0;font-size:11px;line-height:1.65;color:#9ca99c}
+.panel .scale{display:grid;grid-template-columns:repeat(10,1fr);gap:3px;height:20px}
+.panel .scale i{border:2px solid rgba(255,255,255,var(--a));box-shadow:0 0 5px rgba(255,255,255,var(--g))}
+.panel .selected-name{color:#f5f5f5;font-size:16px;letter-spacing:.04em;line-height:1.5}
+.panel .selected-name span{font-size:10px;color:#aeb6ae}
+.panel .ticks{display:flex;justify-content:space-between;font-size:10px;color:#778078}
+.panel .ticks .current{color:#fff;text-shadow:0 0 6px #fff}
+.footer{margin-top:30px;padding-top:12px;border-top:1px solid #ffffff29;color:#859188;display:flex;justify-content:space-between;gap:12px;font-size:10px;letter-spacing:.03em}
+@media(max-width:850px){.layout{grid-template-columns:1fr;gap:25px}.panel{grid-template-columns:repeat(2,1fr);gap:24px}.panel-title{grid-column:1/-1}.skill-grid{gap:15px 12px}}
+@media(max-width:500px){.sheet{padding:18px 13px 25px}header{align-items:start;margin-bottom:18px}header .eyebrow{text-align:right;font-size:8px}.skill-grid{gap:12px 7px}.skill .square{border-width:3px}.skill .mini{gap:2px}.skill .caption{margin-top:5px;align-items:start}.skill .skill-name{font-size:8px;line-height:1.2}.skill .skill-level{font-size:13px}.panel{grid-template-columns:1fr}.footer{font-size:8px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+
+/* Additions v2 : editing, import/export and stand-alone skill marks. */
+.panel .io-row{display:flex;flex-wrap:wrap;gap:7px}
+.io-button{appearance:none;display:inline-flex;align-items:center;justify-content:center;min-height:39px;padding:9px 11px;background:#0b1309;border:1px solid #d4fbd2a9;color:#ecffeb;font-size:11px;font-weight:700;letter-spacing:.02em;transition:background .15s,border-color .15s}
+.io-button:hover{background:#173416;border-color:#fff}
+.io-button:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.io-button.primary-action{background:#153c16;border-color:#00ff00;color:#eaffea}
+.io-section{display:grid;gap:11px;padding-top:14px;border-top:1px solid #ffffff30}
+.io-section h3{margin:0;font-size:11px;letter-spacing:.10em;font-weight:700;color:#d3dbd3}
+.io-message{min-height:1.5em;color:#9dff94!important;font-size:11px!important;line-height:1.45}
+.io-message.error{color:#ff6f6f!important}
+.io-section input[type=file]{display:none}
+@media(max-width:500px){.panel .io-row{display:grid;grid-template-columns:1fr 1fr}.io-button{min-width:0;font-size:10px;padding:8px 6px}}
+.quick-level{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.skill{touch-action:manipulation}
+.skill:hover .square{outline:1px solid #ffffff7f;outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.skill{scroll-behavior:auto}}
+.skills-text-details{border:1px solid #ffffff45;padding:10px 12px;background:#0b100b}
+.skills-text-details summary{font-size:11px;color:#f6fff5;cursor:pointer;list-style:revert}
+.skills-text-details[open] summary{margin-bottom:12px}
+.skills-text-editor{display:grid;gap:8px}
+.skills-text-editor label{display:grid;gap:4px;font-size:10px;color:#c4cec0}
+.skills-text-editor label input{font-size:12px;padding:8px!important}
+
+
+</style>
+</head>
+<body>
+<main class="sheet">
+ <header><h1>D7 / FICHE DE COMPÉTENCES</h1><span class="eyebrow">3 DOMAINES · 6 NIVEAUX D’ESSENCE</span></header>
+ <div class="layout">
+  <section class="skill-grid" id="skill-grid" aria-label="Neuf compétences, chacune notée de 1 à 10"></section>
+  <aside class="panel">
+   <h2 class="panel-title">Profil / édition des niveaux</h2>
+   <div class="control"><label for="character">PERSONNAGE</label><input type="text" id="character" value="Personnage 01" maxlength="60" autocomplete="off"><p class="note">Exemple de fiche ; les niveaux sont modifiables individuellement.</p></div>
+   <div class="control">
+    <div class="selected-name" id="selected-skill">NUMÉRIQUE <span>DOMAINE</span></div>
+    <div class="panel-top"><label for="level">NIVEAU DE LA COMPÉTENCE</label><output id="level-output" for="level">07 / 10</output></div>
+    <input type="range" id="level" min="1" max="10" value="7" step="1" aria-label="Niveau de la compétence sélectionnée de 1 à 10">
+    <div class="ticks" id="level-ticks" aria-hidden="true"></div>
+    <div class="quick-level"><button type="button" class="io-button" id="level-minus" aria-label="Diminuer le niveau de la compétence sélectionnée">− Niveau</button><button type="button" class="io-button primary-action" id="level-plus" aria-label="Augmenter le niveau de la compétence sélectionnée">+ Niveau</button></div>
+    <p class="note"><strong>Clic sur une case : +1 niveau.</strong> Maj+clic : −1. Le niveau passe de 10 à 1 (et inversement).<br><strong>1–9 :</strong> segments et intensité croissante. <strong>10 :</strong> case pleine.</p>
+   </div>
+   <div class="control" aria-label="Édition textuelle des compétences">
+    <label for="skill-name-input">INTITULÉ DE LA CASE SÉLECTIONNÉE</label>
+    <input type="text" id="skill-name-input" maxlength="70" autocomplete="off" aria-label="Modifier le nom de la compétence sélectionnée">
+    <details class="skills-text-details" id="skills-text-details"><summary>ÉDITER LES 9 INTITULÉS À L’ÉCRAN</summary><div class="skills-text-editor" id="skills-text-editor"></div></details>
+   </div>
+   <div class="control">
+    <div class="panel-top"><label for="white">GRILLE BLANCHE / LUMINOSITÉ</label><output id="white-output" for="white">06 / 10</output></div>
+    <input type="range" id="white" min="1" max="10" value="6" step="1" aria-label="Intensité de la grille blanche de 1 à 10">
+    <div class="scale" id="white-scale" aria-hidden="true"></div>
+    <p class="note">Luminosité globale des contours blancs, indépendante des neuf niveaux de compétences.</p>
+   </div>
+
+   <section class="io-section" aria-label="Données du personnage">
+     <h3>SAUVEGARDER / CHARGER LE PERSONNAGE</h3>
+     <div class="io-row"><button class="io-button primary-action" type="button" id="export-json">Exporter JSON</button><button class="io-button" type="button" id="import-json">Importer JSON</button><input id="json-file" type="file" accept=".json,application/json" aria-label="Sélectionner un profil JSON"></div>
+   </section>
+   <section class="io-section" aria-label="Exporter la grille seule">
+     <h3>GRILLE SEULE · SANS TEXTE NI PANNEAU</h3>
+     <div class="io-row"><button class="io-button" type="button" id="export-grid-svg">Grille SVG</button><button class="io-button" type="button" id="export-grid-png">Grille PNG</button><button class="io-button primary-action" type="button" id="export-grid-html">Grille HTML autonome</button></div>
+     <p class="note">SVG/PNG : transparents. HTML : grille seule sur noir #0A0A0A, phosphore CRT et niveaux exportés conservés, sans panneau.</p>
+   </section>
+   <section class="io-section" aria-label="Exporter les neuf badges">
+     <h3>BADGES INDIVIDUELS</h3>
+     <div class="io-row"><button class="io-button primary-action" type="button" id="export-badges">9 badges · ZIP SVG + PNG</button></div>
+     <p class="note">Un badge par compétence, sans texte : neuf SVG et neuf PNG indépendants.</p>
+   </section>
+   <p id="io-message" class="io-message" role="status" aria-live="polite"></p>
+  </aside>
+ </div>
+ <footer class="footer"><span>PHOSPHORE CRT / LAB0 · SOURCE CRT.CSS</span><span>FICHE DÉMONSTRATION · 9 NIVEAUX INDÉPENDANTS</span></footer>
+</main>
+<script>
+'use strict';
+const data=[
+ {name:'Numérique',category:'Domaine',color:'green',level:7},
+ {name:'Diplomatie',category:'Domaine',color:'red',level:3},
+ {name:'Forces spéciales',category:'Domaine',color:'amber',level:5},
+ {name:'Essence 01',category:'Essence',color:'green',level:2},
+ {name:'Essence 02',category:'Essence',color:'red',level:8},
+ {name:'Essence 03',category:'Essence',color:'amber',level:4},
+ {name:'Essence 04',category:'Essence',color:'green',level:6},
+ {name:'Essence 05',category:'Essence',color:'red',level:9},
+ {name:'Essence 06',category:'Essence',color:'amber',level:10}
+];
+const root=document.querySelector('#skill-grid');
+const controls={level:document.querySelector('#level'),white:document.querySelector('#white'),levelOut:document.querySelector('#level-output'),whiteOut:document.querySelector('#white-output')};
+let selected=0;
+const pad=n=>String(n).padStart(2,'0');
+const els=data.map((entry,i)=>{
+ const button=document.createElement('button');button.type='button';button.className=`skill ${entry.color}`;button.dataset.index=i;button.setAttribute('aria-pressed',String(i===selected));
+ button.innerHTML=`<span class="square"><span class="mini">${Array.from({length:9},(_,i)=>`<b data-segment="${i+1}" aria-hidden="true"></b>`).join('')}</span><span class="solid" aria-hidden="true"></span><span class="scan" aria-hidden="true"></span></span><span class="caption"><span class="skill-name"></span><span class="skill-level"><span class="number"></span><small>/10</small></span></span>`;
+ button.querySelector('.skill-name').textContent=entry.name;
+ button.addEventListener('click',event=>stepLevel(i,event.shiftKey?-1:1));root.appendChild(button);return button;
+});
+// Monotonic phosphor response, independent for each of the nine skills.
+function d7Power(level){return level===10?1:0.30+(level-1)*0.085}
+function d7GlowNear(level){return (0.333*d7Power(level)).toFixed(4)} // source halo: 3px, alpha 0x55
+function d7GlowFar(level){return (0.169*d7Power(level)).toFixed(4)} // source halo: 17px, alpha 0x2b
+function renderSkill(i){
+ const d=data[i],el=els[i];el.classList.toggle('level-10',d.level===10);
+ el.style.setProperty('--lit-pct',`${(d7Power(d.level)*100).toFixed(1)}%`);
+ el.style.setProperty('--glow-near',`${(d7GlowNear(d.level)*100).toFixed(2)}%`);
+ el.style.setProperty('--glow-far',`${(d7GlowFar(d.level)*100).toFixed(2)}%`);
+ el.querySelectorAll('b').forEach((seg,j)=>seg.classList.toggle('on',j<d.level));
+ el.querySelector('.number').textContent=pad(d.level);
+ el.setAttribute('aria-label',`${d.category} ${d.name}, niveau ${d.level} sur 10. Cliquer pour augmenter. Maj clic pour diminuer.`);el.title=`${d.name} · niveau ${d.level}/10 — clic +1, Maj+clic −1`;
+}
+function stepLevel(i,delta){
+  const old=data[i].level;
+  data[i].level= ((old-1+delta+10)%10)+1;
+  renderSkill(i);
+  select(i);
+  const msg=document.getElementById('io-message');
+  if(msg){msg.textContent=`${data[i].name} : niveau ${data[i].level}/10.`;msg.classList.remove('error');}
+}
+function select(i){selected=i;els.forEach((el,j)=>el.setAttribute('aria-pressed',String(i===j)));
+ const d=data[i];document.querySelector('#skill-name-input').value=d.name;document.querySelector('#selected-skill').replaceChildren(document.createTextNode(d.name.toUpperCase()+' '));
+ const suffix=document.createElement('span');suffix.textContent=d.category.toUpperCase();document.querySelector('#selected-skill').appendChild(suffix);
+ controls.level.value=d.level;controls.levelOut.value=`${pad(d.level)} / 10`;tick();}
+function tick(){document.querySelectorAll('#level-ticks span').forEach((s,j)=>s.classList.toggle('current',j+1===Number(controls.level.value)))}
+for(let i=1;i<=10;i++){
+ const n=document.createElement('span');n.textContent=i;document.querySelector('#level-ticks').appendChild(n);
+ const s=document.createElement('i');s.style.setProperty('--a',(.13+(i-1)*(.87/9)).toFixed(3));s.style.setProperty('--g',(.035+i*.022).toFixed(3));document.querySelector('#white-scale').appendChild(s);
+}
+controls.level.addEventListener('input',()=>{data[selected].level=Number(controls.level.value);renderSkill(selected);controls.levelOut.value=`${pad(data[selected].level)} / 10`;tick()});
+document.getElementById('level-minus').addEventListener('click',()=>stepLevel(selected,-1));
+document.getElementById('level-plus').addEventListener('click',()=>stepLevel(selected,1));
+controls.white.addEventListener('input',()=>{const n=Number(controls.white.value);root.style.setProperty('--white-a',(.13+(n-1)*(.87/9)).toFixed(3));root.style.setProperty('--white-halo',(.015+n*.024).toFixed(3));root.style.setProperty('--white-halo-wide',(.008+n*.015).toFixed(3));controls.whiteOut.value=`${pad(n)} / 10`});
+// Text editing is bidirectional: selected skill and all nine independent labels.
+const d7NameEditor=document.getElementById('skill-name-input');
+const d7NamesPanel=document.getElementById('skills-text-editor');
+const d7NameInputs=data.map((d,i)=>{
+ const label=document.createElement('label');label.textContent=`${String(i+1).padStart(2,'0')} · ${d.category.toUpperCase()}`;
+ const field=document.createElement('input');field.type='text';field.maxLength=70;field.value=d.name;
+ field.dataset.index=String(i);field.setAttribute('aria-label',`Nom de la compétence ${i+1}`);
+ field.addEventListener('focus',()=>select(i));
+ field.addEventListener('input',()=>d7Rename(i,field.value));
+ label.appendChild(field);d7NamesPanel.appendChild(label);return field;
+});
+function d7Rename(i,value){
+ const next=String(value).slice(0,70);data[i].name=next;
+ els[i].querySelector('.skill-name').textContent=next;
+ d7NameInputs[i].value=next;
+ renderSkill(i);
+ if(i===selected){d7NameEditor.value=next;select(i)}
+}
+d7NameEditor.addEventListener('input',()=>d7Rename(selected,d7NameEditor.value));
+data.forEach((d,i)=>renderSkill(i));select(0);controls.white.dispatchEvent(new Event('input'));
+</script>
+
+<script>
+'use strict';
+// Export autonome : la matrice est construite depuis les niveaux réellement visibles dans cette page.
+const d7Message=document.getElementById('io-message');
+function d7Status(message,error=false){d7Message.textContent=message;d7Message.classList.toggle('error',error)}
+function d7Slug(text){return String(text).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,45)||'personnage'}
+function d7Profile(){return {format:'d7-character-skills',version:1,character:document.getElementById('character').value.trim()||'Personnage',whiteLevel:Number(controls.white.value),selectedSkill:selected,skills:data.map((d,i)=>({id:i+1,name:d.name,category:d.category,color:d.color,level:d.level}))}}
+function d7Save(blob,filename){const url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download=filename;document.body.appendChild(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),3000)}
+function d7XML(text){return String(text).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[c]))}
+const d7Palette={green:'#00ff00',red:'#ff3333',amber:'#ffb000'};
+function d7LitColor(color,level){const hex=color.slice(1);const p=d7Power(level);return '#'+[0,2,4].map(i=>Math.round(parseInt(hex.slice(i,i+2),16)*p).toString(16).padStart(2,'0')).join('')}
+function d7SVGDefs(){return `<defs>
+<pattern id="d7lines" width="4" height="4" patternUnits="userSpaceOnUse"><rect x="0" y="2" width="4" height="1" fill="#000" opacity=".25"/><rect y="3" width="4" height="1" fill="#68ff38" opacity=".04"/></pattern>
+<pattern id="d7dots" width="3" height="3" patternUnits="userSpaceOnUse"><circle cx="1.5" cy="1.5" r=".67" fill="#000" opacity=".34"/></pattern>
+<filter id="d7glow" x="-100%" y="-100%" width="300%" height="300%" color-interpolation-filters="sRGB"><feGaussianBlur stdDeviation="4"/></filter>
+<filter id="d7glowNear" x="-100%" y="-100%" width="300%" height="300%" color-interpolation-filters="sRGB"><feGaussianBlur stdDeviation="1.5"/></filter>
+<filter id="d7glowFar" x="-100%" y="-100%" width="300%" height="300%" color-interpolation-filters="sRGB"><feGaussianBlur stdDeviation="8.5"/></filter>
+</defs>`}
+// Each badge is a genuine single 3x3 skill icon. At level 10 it becomes one continuous filled square.
+function d7BadgeGroup(d,x,y,size,whiteLevel){
+ const color=d7Palette[d.color],lit=d7LitColor(color,d.level),border=Math.max(2,size*.021),gap=Math.max(1,size*.013),unit=(size-border*2-gap*2)/3,step=unit+gap;
+ const near=d7GlowNear(d.level),far=d7GlowFar(d.level);
+ const alpha=(.13+(whiteLevel-1)*(.87/9)).toFixed(3),halo=(.015+whiteLevel*.024).toFixed(3);
+ let elements=`<rect x="${x}" y="${y}" width="${size}" height="${size}" fill="#020302"/>`;
+ if(d.level===10){
+  elements+=`<rect x="${x+border}" y="${y+border}" width="${size-2*border}" height="${size-2*border}" fill="${color}" opacity="${far}" filter="url(#d7glowFar)"/>`;
+  elements+=`<rect x="${x+border}" y="${y+border}" width="${size-2*border}" height="${size-2*border}" fill="${color}"/>`;
+ }
+ else for(let i=0;i<9;i++){
+  const cx=x+border+(i%3)*step,cy=y+border+Math.floor(i/3)*step;
+  if(i<d.level){
+    elements+=`<rect x="${cx.toFixed(2)}" y="${cy.toFixed(2)}" width="${unit.toFixed(2)}" height="${unit.toFixed(2)}" fill="${color}" opacity="${far}" filter="url(#d7glowFar)"/>`;
+    elements+=`<rect x="${cx.toFixed(2)}" y="${cy.toFixed(2)}" width="${unit.toFixed(2)}" height="${unit.toFixed(2)}" fill="${color}" opacity="${near}" filter="url(#d7glowNear)"/>`;
+  }
+  elements+=`<rect x="${cx.toFixed(2)}" y="${cy.toFixed(2)}" width="${unit.toFixed(2)}" height="${unit.toFixed(2)}" fill="${i<d.level?lit:'#090f09'}"/>`;
+ }
+ // The static CRT trame and phosphore are adapted from the attached crt.css.
+ elements+=`<rect x="${x+border}" y="${y+border}" width="${size-2*border}" height="${size-2*border}" fill="url(#d7lines)" opacity=".75"/>`;
+ elements+=`<rect x="${x+border}" y="${y+border}" width="${size-2*border}" height="${size-2*border}" fill="url(#d7dots)" opacity=".75"/>`;
+ elements+=`<rect x="${x+border/2}" y="${y+border/2}" width="${size-border}" height="${size-border}" fill="none" stroke="#fff" stroke-width="${border}" opacity="${halo}" filter="url(#d7glow)"/>`;
+ elements+=`<rect x="${x+border/2}" y="${y+border/2}" width="${size-border}" height="${size-border}" fill="none" stroke="#fff" stroke-width="${border}" opacity="${alpha}"/>`;
+ return elements;
+}
+function d7GridSVG(){
+ const size=240,gap=19,pad=20,canvas=size*3+gap*2+pad*2,white=Number(controls.white.value);
+ const contents=data.map((d,i)=>d7BadgeGroup(d,pad+(i%3)*(size+gap),pad+Math.floor(i/3)*(size+gap),size,white)).join('');
+ return `<svg xmlns="http://www.w3.org/2000/svg" width="${canvas}" height="${canvas}" viewBox="0 0 ${canvas} ${canvas}">${d7SVGDefs()}${contents}</svg>`;
+}
+function d7SingleBadgeSVG(i){const d=data[i],size=480,pad=22,whole=size+pad*2;return `<svg xmlns="http://www.w3.org/2000/svg" width="${whole}" height="${whole}" viewBox="0 0 ${whole} ${whole}">${d7SVGDefs()}${d7BadgeGroup(d,pad,pad,size,Number(controls.white.value))}</svg>`}
+const d7SvgBlob=svg=>new Blob([svg],{type:'image/svg+xml;charset=utf-8'});
+async function d7PNG(svg,scale=2){const url=URL.createObjectURL(d7SvgBlob(svg));try{
+ const image=await new Promise((res,rej)=>{const img=new Image();img.onload=()=>res(img);img.onerror=()=>rej(new Error('Image SVG non décodable'));img.src=url});
+ const canvas=document.createElement('canvas');canvas.width=image.width*scale;canvas.height=image.height*scale;const ctx=canvas.getContext('2d');if(!ctx)throw new Error('Canvas indisponible');ctx.drawImage(image,0,0,canvas.width,canvas.height);
+ return await new Promise((res,rej)=>canvas.toBlob(b=>b?res(b):rej(new Error('Export PNG impossible')),'image/png'));
+}finally{URL.revokeObjectURL(url)}}
+// Self-contained ZIP store writer: no external dependency; proper CRC32, UTF-8 names, central directory.
+const d7Enc=new TextEncoder();
+function d7CRC(bytes){let crc=0xffffffff;for(const b of bytes){crc^=b;for(let j=0;j<8;j++)crc=crc&1?(crc>>>1)^0xedb88320:crc>>>1}return (crc^0xffffffff)>>>0}
+function d7Zip(files){let offset=0;const parts=[],central=[];
+ const le16=(v)=>{const a=new Uint8Array(2);new DataView(a.buffer).setUint16(0,v,true);return a};
+ const le32=(v)=>{const a=new Uint8Array(4);new DataView(a.buffer).setUint32(0,v>>>0,true);return a};
+ for(const file of files){const name=d7Enc.encode(file.name),bytes=file.bytes,crc=d7CRC(bytes),start=offset;
+ const local=[le32(0x04034b50),le16(20),le16(0x0800),le16(0),le16(0),le16(0),le32(crc),le32(bytes.length),le32(bytes.length),le16(name.length),le16(0),name,bytes];
+ parts.push(...local);offset+=local.reduce((n,c)=>n+c.length,0);
+ central.push(...[le32(0x02014b50),le16(20),le16(20),le16(0x0800),le16(0),le16(0),le16(0),le32(crc),le32(bytes.length),le32(bytes.length),le16(name.length),le16(0),le16(0),le16(0),le16(0),le32(0),le32(start),name]);
+ }
+ const centralLen=central.reduce((n,c)=>n+c.length,0),end=[le32(0x06054b50),le16(0),le16(0),le16(files.length),le16(files.length),le32(centralLen),le32(offset),le16(0)];
+ return new Blob([...parts,...central,...end],{type:'application/zip'});
+}
+document.getElementById('export-json').addEventListener('click',()=>{d7Save(new Blob([JSON.stringify(d7Profile(),null,2)+'\n'],{type:'application/json;charset=utf-8'}),`d7-${d7Slug(d7Profile().character)}.json`);d7Status('Profil JSON exporté.')});
+document.getElementById('import-json').addEventListener('click',()=>document.getElementById('json-file').click());
+document.getElementById('json-file').addEventListener('change',async event=>{const file=event.target.files[0];if(!file)return;try{
+ if(file.size>1024*1024)throw new Error('Fichier JSON trop volumineux (max. 1 Mo).');
+ const parsed=JSON.parse(await file.text());
+ if(parsed?.format!=='d7-character-skills'||parsed.version!==1||typeof parsed.character!=='string'||parsed.character.length>60||!Number.isInteger(parsed.whiteLevel)||parsed.whiteLevel<1||parsed.whiteLevel>10||!Array.isArray(parsed.skills)||parsed.skills.length!==9)throw new Error('Format de profil D7 invalide.');
+ for(let i=0;i<9;i++){const d=parsed.skills[i];if(!d||d.id!==i+1||typeof d.name!=='string'||d.name.length>70||d.category!==data[i].category||d.color!==data[i].color||!Number.isInteger(d.level)||d.level<1||d.level>10)throw new Error(`Compétence ${i+1} invalide.`)}
+ // Atomic state change after full validation.
+ document.getElementById('character').value=parsed.character;
+ parsed.skills.forEach((d,i)=>{data[i].name=d.name;data[i].level=d.level;els[i].querySelector('.skill-name').textContent=d.name;d7NameInputs[i].value=d.name;renderSkill(i)});
+ controls.white.value=parsed.whiteLevel;controls.white.dispatchEvent(new Event('input'));select(Number.isInteger(parsed.selectedSkill)&&parsed.selectedSkill>=0&&parsed.selectedSkill<9?parsed.selectedSkill:0);
+ d7Status('Profil JSON importé : 9 niveaux restaurés.');
+ }catch(error){d7Status(`Import refusé : ${error.message}`,true)}finally{event.target.value=''}});
+
+// Export HTML autonome et statique : grille visible seule, sans script, sans interface et sans texte.
+// On preserve CSS CRT from the current document and inline each badge's current CSS variables,
+// thereby ensuring white outline intensity and independent skill brightness survive the export.
+function d7GridStandaloneHTML(){
+ const sourceStyle=document.querySelector('style').textContent;
+ const board=document.createElement('section');board.className='skill-grid';board.id='skill-grid';
+ board.setAttribute('aria-label','Grille D7 de neuf niveaux');
+ for(const variable of ['--white-a','--white-halo','--white-halo-wide']){
+   board.style.setProperty(variable,root.style.getPropertyValue(variable));
+ }
+ for(const el of els){
+  const cell=document.createElement('div');
+  cell.className=el.className;cell.setAttribute('aria-label',el.getAttribute('aria-label').replace(/ Cliquer.*$/,''));
+  cell.style.cssText=el.style.cssText;
+  cell.append(el.querySelector('.square').cloneNode(true));
+  board.appendChild(cell);
+ }
+ return `<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>D7 · Grille CRT</title>
+<style>
+${sourceStyle}
+/* Export de la grille seule : pas de contrôles, pas de décorations externes. */
+body{display:grid;place-items:center;min-height:100svh;background:#0a0a0a;padding:clamp(12px,4vw,32px)}
+#skill-grid{width:min(100%,840px);gap:clamp(6px,1.8vw,16px) clamp(6px,1.5vw,14px)}
+#skill-grid .skill{cursor:default;pointer-events:none}
+#skill-grid .skill .square{display:block}
+</style>
+</head>
+<body>
+${board.outerHTML}
+</body>
+</html>
+`;
+}
+document.getElementById('export-grid-html').addEventListener('click',()=>{
+ try{
+  const html=d7GridStandaloneHTML();
+  d7Save(new Blob([html],{type:'text/html;charset=utf-8'}),`d7-${d7Slug(d7Profile().character)}-grille.html`);
+  d7Status('Grille HTML seule exportée : 9 compétences, niveaux CRT et halo blanc conservés.');
+ }catch(error){d7Status(`Erreur HTML : ${error.message}`,true)}
+});
+
+document.getElementById('export-grid-svg').addEventListener('click',()=>{d7Save(d7SvgBlob(d7GridSVG()),`d7-${d7Slug(d7Profile().character)}-grille.svg`);d7Status('Grille seule SVG exportée.')});
+document.getElementById('export-grid-png').addEventListener('click',async()=>{try{d7Status('Génération du PNG…');d7Save(await d7PNG(d7GridSVG(),2),`d7-${d7Slug(d7Profile().character)}-grille.png`);d7Status('Grille seule PNG exportée.')}catch(error){d7Status(`Erreur PNG : ${error.message}`,true)}});
+document.getElementById('export-badges').addEventListener('click',async()=>{const button=document.getElementById('export-badges');button.disabled=true;try{
+ d7Status('Génération des 9 badges…');const files=[];
+ for(let i=0;i<9;i++){const svg=d7SingleBadgeSVG(i),base=`${String(i+1).padStart(2,'0')}-${d7Slug(data[i].name)}`;
+ files.push({name:`badges-svg/${base}.svg`,bytes:d7Enc.encode(svg)});
+ const png=await d7PNG(svg,1);files.push({name:`badges-png/${base}.png`,bytes:new Uint8Array(await png.arrayBuffer())});
+ }
+ files.push({name:'profil.json',bytes:d7Enc.encode(JSON.stringify(d7Profile(),null,2)+'\n')});
+ d7Save(d7Zip(files),`d7-${d7Slug(d7Profile().character)}-9-badges.zip`);d7Status('ZIP exporté : 9 SVG + 9 PNG + profil JSON.');
+ }catch(error){d7Status(`Erreur badges : ${error.message}`,true)}finally{button.disabled=false}});
+</script>
+
+</body>
+</html>
